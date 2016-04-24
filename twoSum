@@ -1,0 +1,10 @@
+def twoSum(s,k):
+    left,right=0,len(s)-1
+    lit=sorted(s)
+    while(left<right):
+        if lit[left]+lit[right]<k:
+                left+=1
+        elif lit[left]+lit[right]>k:
+                right-=1
+        else : return [lit[left],lit[right]]
+    return []
