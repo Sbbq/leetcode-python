@@ -1,0 +1,3 @@
+解1
+用lastP和lastS记录*后的位置
+当遇到不匹配时，就让pPtr回到lastP，并且把sPtr归入到*中，lastS和sPtr+=1
