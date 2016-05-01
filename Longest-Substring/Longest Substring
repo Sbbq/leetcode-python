@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+#开始漏掉等于号，后来更新hashMap没写好。
+#用left记录左边开始坐标，hashMap记录是否出现，出现就移动left，maxlong记录最长
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        left=0
+        maxlong=0
+        hashMap={}
+        for i,val in enumerate(s):
+            if val in hashMap:
+                if left<=hashMap[val]:
+                    left=hashMap[val]+1
+            hashMap[val]=i
+            maxlong=max(maxlong,i-left+1)
+        return maxlong
