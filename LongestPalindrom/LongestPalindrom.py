@@ -9,6 +9,7 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        #注意最后是井号和空格，井号为了对称，空格为了解决边界问题
         t='@#'+'#'.join(s)+'# '
 #没有@和空格的话会在i+pi处有边界问题
         p=[0]*len(t)
