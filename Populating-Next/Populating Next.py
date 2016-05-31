@@ -24,3 +24,27 @@ class Solution(object):
                     cur.right.next=cur.next.left
                 cur=cur.next
             root=root.left
+#任意二叉树
+#每层设置一个空节点nextleft，记录开头,cur遍历
+#记录上一层root
+class Solution2(object):
+    def connect(self, root):
+        """
+        :type root: TreeLinkNode
+        :rtype: nothing
+        """
+        if root==None:
+            return
+        while(root!=None):
+            nextleft=TreeLinkNode(-1)
+            cur=nextleft
+            while(root!=None):
+                if root.left!=None:
+                    cur.next=root.left
+                    cur=cur.next
+                if root.right!=None:
+                    cur.next=root.right
+                    cur=cur.next
+                root=root.next
+            root=nextleft.next
+            nextleft=None
