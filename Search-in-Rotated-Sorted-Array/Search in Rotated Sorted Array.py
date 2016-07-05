@@ -39,6 +39,7 @@ class Solution2(object):
             mid=left+(right-left)/2
             if nums[mid]==target:
                 return True
+            #找到单调区间，然后排除不可能的
             if nums[mid]>nums[left]:
                 if nums[left]<=target<nums[mid]:
                     right=mid-1
